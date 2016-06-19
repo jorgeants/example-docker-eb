@@ -1,0 +1,18 @@
+upstream fpm {
+    server  127.0.0.1:9000;
+}
+
+server {
+    listen 80;
+    server_name localhost;
+    root /var/www/html;
+    index index.php;
+
+    location ~ \.php$ {
+        fastcgi_pass    fpm;
+        fastcgi_index   index.php;
+        include         fastcgi_params;
+        fastcgi_read_timeout 600;
+        fastcgi_param   SCRIPT_FILENAME     /var/www/html/$fastcgi_script_name;
+    }
+}
