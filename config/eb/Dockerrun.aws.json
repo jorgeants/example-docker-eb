@@ -1,0 +1,38 @@
+{
+  "AWSEBDockerrunVersion": 1,
+  "volumes": [
+    {
+      "name": "src",
+      "host": {
+        "sourcePath": "/var/app/current/src"
+      }
+    },
+    {
+      "name": "nginx-config-file",
+      "host": {
+        "sourcePath": "/var/app/current/config/nginx/default"
+      }
+    }
+  ],
+  "containerDefinitions": [
+    {
+      "name": "nginx-php-fpm",
+      "image": "delermando/nginx-php-fpm:latest",
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "mountPoints": [
+        {
+          "sourceVolume": "src",
+          "containerPath": "/var/www/html/"
+        },
+        {
+          "sourceVolume": "nginx-config-file",
+          "containerPath": "/etc/nginx/sites-available/default"
+        }      ]
+    }
+  ]
+}
