@@ -1,3 +1,2 @@
 <?php 
-
-echo 'Docker + Elastic Beanstalk';
+require("page.html");
