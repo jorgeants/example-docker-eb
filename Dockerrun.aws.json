@@ -1,38 +1,20 @@
 {
-  "AWSEBDockerrunVersion": 1,
-  "volumes": [
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name" : "delermando/nginx-php-fpm:latest",
+    "Update" : "true"
+  },
+  "Ports": [
+    {"ContainerPort": "80"}
+  ],
+  "Volumes": [
     {
-      "name": "src",
-      "host": {
-        "sourcePath": "/var/app/current/src"
-      }
+      "HostDirectory": "/var/app/current/src",
+      "ContainerDirectory": "/var/www/html/"
     },
     {
-      "name": "nginx-config-file",
-      "host": {
-        "sourcePath": "/var/app/current/config/nginx/default"
-      }
-    }
-  ],
-  "containerDefinitions": [
-    {
-      "name": "nginx-php-fpm",
-      "image": "delermando/nginx-php-fpm:latest",
-      "portMappings": [
-        {
-          "hostPort": 80,
-          "containerPort": 80
-        }
-      ],
-      "mountPoints": [
-        {
-          "sourceVolume": "src",
-          "containerPath": "/var/www/html/"
-        },
-        {
-          "sourceVolume": "nginx-config-file",
-          "containerPath": "/etc/nginx/sites-available/default"
-        }      ]
+      "HostDirectory": "/etc/nginx/sites-available/default",
+      "ContainerDirectory": "/etc/nginx/sites-available/default"
     }
   ]
 }
