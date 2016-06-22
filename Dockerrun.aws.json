@@ -13,7 +13,7 @@
       "ContainerDirectory": "/var/www/html/"
     },
     {
-      "HostDirectory": "/etc/nginx/sites-available/default",
+      "HostDirectory": "/var/app/current/config/nginx/default",
       "ContainerDirectory": "/etc/nginx/sites-available/default"
     }
   ]
