@@ -1,6 +1,6 @@
-## Docker + Elastic Beanstalk
+# Docker + Elastic Beanstalk
 
-Este é um repositório com os arquivos de configuração de um aplicação PHP-FPM + Nginx simples usando Docker no Elastic Beanstalk.
+Criando uma aplicação simples com Docker no Elastic Beanstalk usando PHP7-FPM + Nginx.
 
 ![Docker + Elastic Beanstalk]
 (http://ap.imagensbrasil.org/images/elasticbeanstalk-docker.jpg)
