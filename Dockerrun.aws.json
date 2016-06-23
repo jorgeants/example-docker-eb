@@ -1,7 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name" : "delermando/nginx-php-fpm:latest",
+    "Name" : "personare/nginx-php7-fpm:1.0",
     "Update" : "true"
   },
   "Ports": [
